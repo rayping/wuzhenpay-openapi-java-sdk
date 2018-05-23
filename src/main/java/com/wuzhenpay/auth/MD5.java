@@ -17,7 +17,7 @@ public class MD5 {
     /**
      * 签名
      * @param params 需要签名的参数
-     * @param openKey 密钥
+     * @param secret 密钥
      * @return string
      */
     public static String sign(Map<String, String> params, String secret) {

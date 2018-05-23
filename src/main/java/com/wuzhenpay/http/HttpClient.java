@@ -27,7 +27,7 @@ public class HttpClient {
      * @param api 接口
      * @param params 请求参数
      * @param secret 密钥
-     * @return
+     * @return HttpResponse
      */
     public static HttpResponse post(String api, Map<String, String> params, String secret) {
         InitConfig initConfig = new InitConfig();
