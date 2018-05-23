@@ -33,7 +33,7 @@ public class Application {
 
     /**
      * 初始化
-     * @param initConfig
+     * @param initConfig 配置
      */
     public Application(InitConfig initConfig) {
         setInitConfig(initConfig);
@@ -41,8 +41,8 @@ public class Application {
 
     /**
      * 请求统一支付
-     * @param tradePay
-     * @return
+     * @param tradePay 请求支付实体类
+     * @return HttpResponse
      */
     public HttpResponse pay(TradePay tradePay) {
         Map<String, String> map = new HashMap<>();
@@ -71,7 +71,7 @@ public class Application {
     /**
      * 交易退款
      * TODO
-     * @return
+     * @return HttpResponse
      */
     public HttpResponse refund() {
         return null;
@@ -80,7 +80,7 @@ public class Application {
     /**
      * 关闭订单
      * TODO
-     * @return
+     * @return HttpResponse
      */
     public HttpResponse close() {
         return null;
@@ -89,7 +89,7 @@ public class Application {
     /**
      * 交易查询
      * TODO
-     * @return
+     * @return HttpResponse
      */
     public HttpResponse query() {
         return null;
@@ -98,7 +98,7 @@ public class Application {
     /**
      * 撤销订单
      * TODO
-     * @return
+     * @return HttpResponse
      */
     public HttpResponse reverse() {
         return null;
@@ -106,8 +106,8 @@ public class Application {
 
     /**
      * 获取请求参数
-     * @param map
-     * @return
+     * @param map 请求参数
+     * @return HttpResponse
      */
     private Map<String, String> getRequestParams(Map<String, String> map) {
         // 公共请求参数

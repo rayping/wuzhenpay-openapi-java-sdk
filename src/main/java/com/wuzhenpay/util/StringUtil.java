@@ -10,8 +10,8 @@ public class StringUtil {
      * 判断字串是否为空值
      * NULL、空格均为空值
      *
-     * @param value
-     * @return
+     * @param value 需要判断的内容
+     * @return bool
      */
     public static boolean isEmpty(String value) {
         return null == value || value.trim().length() == 0;

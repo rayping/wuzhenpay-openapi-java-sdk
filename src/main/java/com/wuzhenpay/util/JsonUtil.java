@@ -11,8 +11,8 @@ import com.alibaba.fastjson.JSONException;
 public class JsonUtil extends JSON {
     /**
      * 判断是否为json array
-     * @param json
-     * @return
+     * @param json 需要判断的字符串
+     * @return bool
      */
     public static boolean isJsonArray(String json) {
         try {
@@ -25,8 +25,8 @@ public class JsonUtil extends JSON {
 
     /**
      * 判断是否为json object
-     * @param json
-     * @return
+     * @param json 需要判断的字符串
+     * @return bool
      */
     public static boolean isJsonObject(String json) {
         try {

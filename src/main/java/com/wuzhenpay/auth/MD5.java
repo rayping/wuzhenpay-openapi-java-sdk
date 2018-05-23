@@ -16,9 +16,9 @@ import java.util.Map;
 public class MD5 {
     /**
      * 签名
-     * @param params
-     * @param openKey
-     * @return
+     * @param params 需要签名的参数
+     * @param openKey 密钥
+     * @return string
      */
     public static String sign(Map<String, String> params, String secret) {
         String str = "";
@@ -44,10 +44,10 @@ public class MD5 {
 
     /**
      * 验签
-     * @param sign
-     * @param params
-     * @param secret
-     * @return
+     * @param sign 需要验签的签名
+     * @param params 需要签名的参数
+     * @param secret 密钥
+     * @return bool
      */
     public static boolean verify(String sign, Map<String, String> params, String secret) {
         return (sign.equals(sign(params, secret)));
@@ -55,8 +55,8 @@ public class MD5 {
 
     /**
      * md5加密
-     * @param info
-     * @return
+     * @param info 需要加密的信息
+     * @return string
      */
     public static String encrypt(String info) {
         try {
