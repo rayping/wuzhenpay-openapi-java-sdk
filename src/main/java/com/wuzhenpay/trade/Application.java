@@ -5,7 +5,7 @@ import com.wuzhenpay.auth.MD5;
 import com.wuzhenpay.config.InitConfig;
 import com.wuzhenpay.http.HttpClient;
 import com.wuzhenpay.http.HttpResponse;
-import com.wuzhenpay.trade.model.TradePay;
+import com.wuzhenpay.trade.model.*;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -70,38 +70,71 @@ public class Application {
 
     /**
      * 交易退款
-     * TODO
+     * @param tradeRefund 请求退款实体类
      * @return HttpResponse
      */
-    public HttpResponse refund() {
-        return null;
+    public HttpResponse refund(TradeRefund tradeRefund) {
+        Map<String, String> map = new HashMap<>();
+        map.put("out_trade_no", tradeRefund.getOutTradeNo());
+        map.put("transaction_id", tradeRefund.getTransactionId());
+        map.put("out_refund_no", tradeRefund.getOutRefundNo());
+        map.put("refund_fee", tradeRefund.getRefundFee());
+        map.put("reason", tradeRefund.getReason());
+
+        // 获取请求参数
+        Map<String, String> requestParams = getRequestParams(map);
+
+        // 请求
+        return HttpClient.post("/trade/refund", requestParams, getInitConfig().getSecret());
     }
 
     /**
      * 关闭订单
-     * TODO
+     * @param tradeClose 请求关单实体类
      * @return HttpResponse
      */
-    public HttpResponse close() {
-        return null;
+    public HttpResponse close(TradeClose tradeClose) {
+        Map<String, String> map = new HashMap<>();
+        map.put("out_trade_no", tradeClose.getOutTradeNo());
+
+        // 获取请求参数
+        Map<String, String> requestParams = getRequestParams(map);
+
+        // 请求
+        return HttpClient.post("/trade/close", requestParams, getInitConfig().getSecret());
     }
 
     /**
      * 交易查询
-     * TODO
+     * @param tradeQuery 请求查询实体类
      * @return HttpResponse
      */
-    public HttpResponse query() {
-        return null;
+    public HttpResponse query(TradeQuery tradeQuery) {
+        Map<String, String> map = new HashMap<>();
+        map.put("out_trade_no", tradeQuery.getOutTradeNo());
+        map.put("transaction_id", tradeQuery.getTransactionId());
+
+        // 获取请求参数
+        Map<String, String> requestParams = getRequestParams(map);
+
+        // 请求
+        return HttpClient.post("/trade/query", requestParams, getInitConfig().getSecret());
     }
 
     /**
      * 撤销订单
-     * TODO
+     * @param tradeReverse 请求撤单实体类
      * @return HttpResponse
      */
-    public HttpResponse reverse() {
-        return null;
+    public HttpResponse reverse(TradeReverse tradeReverse) {
+        Map<String, String> map = new HashMap<>();
+        map.put("out_trade_no", tradeReverse.getOutTradeNo());
+
+        // 获取请求参数
+        Map<String, String> requestParams = getRequestParams(map);
+
+        // 请求
+        return HttpClient.post("/trade/reverse", requestParams, getInitConfig().getSecret());
     }
 
     /**

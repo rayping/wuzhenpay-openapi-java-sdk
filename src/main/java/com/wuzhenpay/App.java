@@ -4,7 +4,7 @@ import com.wuzhenpay.common.WZPOException;
 import com.wuzhenpay.config.InitConfig;
 import com.wuzhenpay.http.HttpResponse;
 import com.wuzhenpay.trade.Application;
-import com.wuzhenpay.trade.model.TradePay;
+import com.wuzhenpay.trade.model.*;
 
 /**
  * Hello world!
@@ -25,15 +25,40 @@ public class App
             // 初始化
             Application client = new Application(initConfig);
 
-            // 请求参数
+            // 请求支付参数
             TradePay tradePay = new TradePay();
-            tradePay.setTotalFee("0.03");
+            tradePay.setTotalFee("1.2");
             tradePay.setSubject("收单测试");
-            tradePay.setOutTradeNo("201805210007");
+            tradePay.setOutTradeNo("2018008220001");
             tradePay.setPayType("pay.wechat.qrcode");
 
             // 开始请求
             HttpResponse httpResponse = client.pay(tradePay);
+
+            // 请求查询
+//            TradeQuery tradeQuery = new TradeQuery();
+//            tradeQuery.setOutTradeNo("2018008220001");
+//            HttpResponse httpResponse = client.query(tradeQuery);
+
+            // 请求退款
+//            TradeRefund tradeRefund = new TradeRefund();
+//            tradeRefund.setOutTradeNo("2018008220001");
+//            tradeRefund.setOutRefundNo("T20180001");
+//            tradeRefund.setRefundFee("1.2");
+//            tradeRefund.setReason("退款原因");
+//            HttpResponse httpResponse = client.refund(tradeRefund);
+
+
+            // 请求关单
+//            TradeClose tradeClose = new TradeClose();
+//            tradeClose.setOutTradeNo("2018008220001");
+//            HttpResponse httpResponse = client.close(tradeClose);
+
+            // 请求撤销订单，主要用于pay.xxx.code条码支付不明确的情况
+//            TradeReverse tradeReverse = new TradeReverse();
+//            tradeReverse.setOutTradeNo("2018008220001");
+//            HttpResponse httpResponse = client.reverse(tradeReverse);
+
             System.out.println("返回的业务数据：" + httpResponse.getBizContent());
         } catch (WZPOException e) {
             System.out.println("请求错误：" + e.getMessage());

@@ -31,6 +31,14 @@ public class TradePay {
      */
     private String notifyUrl;
     /**
+     * @var 微信子商户appid
+     */
+    private String subAppid;
+    /**
+     * @var 是否为小程序支付
+     */
+    private String isMinipg;
+    /**
      * @var 商户微信公众号对应的openid，微信公众号支付时必选
      */
     private String openid;
@@ -117,6 +125,22 @@ public class TradePay {
 
     public void setOpenid(String openid) {
         this.openid = openid;
+    }
+
+    public String getSubAppid() {
+        return subAppid;
+    }
+
+    public void setSubAppid(String subAppid) {
+        this.subAppid = subAppid;
+    }
+
+    public String getIsMinipg() {
+        return isMinipg;
+    }
+
+    public void setIsMinipg(String isMinipg) {
+        this.isMinipg = isMinipg;
     }
 
     public String getBuyerId() {
