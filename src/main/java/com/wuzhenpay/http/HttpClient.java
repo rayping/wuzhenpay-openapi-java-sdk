@@ -60,7 +60,7 @@ public class HttpClient {
             String responseBody = response.body().string();
             // System.out.println("Response data：" + responseBody);
             JSONObject json = JSONObject.parseObject(responseBody);
-
+            
             if (!json.getInteger("code").equals(200)) {
                 throw new WZPOException(json.get("message").toString());
             }

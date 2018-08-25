@@ -53,6 +53,8 @@ public class Application {
         map.put("time_expire", tradePay.getTimeExpire());
         map.put("notify_url", tradePay.getNotifyUrl());
         map.put("openid", tradePay.getOpenid());
+        map.put("sub_appid", tradePay.getSubAppid());
+        map.put("is_minipg", tradePay.getIsMinipg());
         map.put("buyer_id", tradePay.getBuyerId());
         map.put("auth_code", tradePay.getAuthCode());
         map.put("operator_id", tradePay.getOperatorId());
