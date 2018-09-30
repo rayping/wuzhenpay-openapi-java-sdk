@@ -27,10 +27,14 @@ public class App
 
             // 请求支付参数
             TradePay tradePay = new TradePay();
-            tradePay.setTotalFee("1.2");
+            tradePay.setTotalFee("0.02");
             tradePay.setSubject("收单测试");
-            tradePay.setOutTradeNo("2018008220001");
-            tradePay.setPayType("pay.wechat.qrcode");
+            tradePay.setOutTradeNo("201809300005");
+            tradePay.setPayType("pay.alipay.code");
+            tradePay.setAuthCode("284402457520020947");
+            tradePay.setBuyerId("2088402339754365");
+            tradePay.setOpenid("o2ry2jl9FZbKMk6YEgkIaZhL01tU");
+//            tradePay.setSubAppid("wx8763f524cc07907e");
 
             // 开始请求
             HttpResponse httpResponse = client.pay(tradePay);

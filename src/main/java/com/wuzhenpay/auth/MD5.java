@@ -38,6 +38,7 @@ public class MD5 {
 
         // 拼接openKey
         linkString = linkString + "secret=" + secret;
+        System.out.println("待签名的参数：" + linkString);
         String md5 = encrypt(linkString);
         return md5;
     }

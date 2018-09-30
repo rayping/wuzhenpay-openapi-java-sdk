@@ -32,7 +32,8 @@ public class HttpClient {
     public static HttpResponse post(String api, Map<String, String> params, String secret) {
         InitConfig initConfig = new InitConfig();
 
-        // System.out.println("请求的参数：" + JSON.toJSONString(params));
+        System.out.println("请求的参数：" + JSON.toJSONString(params));
+
         // 获取请求地址
         String uri = initConfig.getApiHost() + api;
 
