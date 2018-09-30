@@ -38,7 +38,6 @@ public class MD5 {
 
         // 拼接openKey
         linkString = linkString + "secret=" + secret;
-        System.out.println("待签名的参数：" + linkString);
         String md5 = encrypt(linkString);
         return md5;
     }
@@ -62,7 +61,7 @@ public class MD5 {
     public static String encrypt(String info) {
         try {
             MessageDigest digest = MessageDigest.getInstance("md5");
-            byte[] result = digest.digest(info.getBytes());
+            byte[] result = digest.digest(info.getBytes("utf-8"));
             StringBuilder sb = new StringBuilder();
 
             for (byte b : result) {

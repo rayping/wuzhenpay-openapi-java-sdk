@@ -6,7 +6,7 @@
 
   <groupId>com.wuzhenpay</groupId>
   <artifactId>java-sdk-openapi</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 
   <name>java-sdk-openapi</name>
   <description>Wuzhenpay Open api SDK For Java</description>

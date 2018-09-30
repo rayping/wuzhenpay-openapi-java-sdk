@@ -29,8 +29,8 @@ public class App
             TradePay tradePay = new TradePay();
             tradePay.setTotalFee("0.02");
             tradePay.setSubject("收单测试");
-            tradePay.setOutTradeNo("201809300005");
-            tradePay.setPayType("pay.alipay.code");
+            tradePay.setOutTradeNo("2018093000001");
+            tradePay.setPayType("pay.wechat.js");
             tradePay.setAuthCode("284402457520020947");
             tradePay.setBuyerId("2088402339754365");
             tradePay.setOpenid("o2ry2jl9FZbKMk6YEgkIaZhL01tU");
